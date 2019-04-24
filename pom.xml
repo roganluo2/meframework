@@ -6,6 +6,7 @@
 
   <groupId>com.gperedu.meframework</groupId>
   <artifactId>meframework-all</artifactId>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
 
@@ -36,6 +37,13 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.10</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -45,8 +53,8 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.source}</target>
             <encoding>UTF-8</encoding>
           </configuration>
         </plugin>

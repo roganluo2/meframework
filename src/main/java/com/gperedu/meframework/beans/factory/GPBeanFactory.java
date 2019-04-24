@@ -12,4 +12,6 @@ public interface GPBeanFactory {
      * @return
      */
     Object getBean(String beanName);
+
+    Object getBean(Class className);
 }
