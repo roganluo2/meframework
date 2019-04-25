@@ -83,12 +83,13 @@ public class GPApplicationContext extends GPDefaultListableBeanFactory implement
                 String autowireName = annotation.value().trim();
                 if("".equals(autowireName))
                 {
-                    autowireName = field.getType().getName();
+                    autowireName = field.getName();
                 }
                 field.setAccessible(true);
                 if(factoryBeanInstanceCache.get(autowireName) == null)
                 {
-                    continue;
+
+//                    continue;
                 }
                 //怎么保证被注入的属性已经实例化呢？？
                 field.set(gpBeanWrapper.getWrappedInstance(), this.factoryBeanInstanceCache.get(autowireName).getWrappedInstance());

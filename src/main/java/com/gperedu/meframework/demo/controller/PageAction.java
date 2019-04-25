@@ -20,7 +20,7 @@ public class PageAction {
     @GPAutowired
     IQueryService queryService;
 
-
+    @GPRequestMapping("/teacher")
     public GPModelAndView query(@GPRequetParam("teacher") String teacher)
     {
         String result = queryService.query(teacher);
@@ -28,7 +28,7 @@ public class PageAction {
         model.put("teacher", teacher);
         model.put("token", 1234);
         model.put("data", result);
-        return new GPModelAndView("first.htm",model);
+        return new GPModelAndView("first.html",model);
 
     }
 
